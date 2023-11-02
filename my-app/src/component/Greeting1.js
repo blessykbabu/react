@@ -1,6 +1,7 @@
 import React ,{Component,Fragment} from "react";
 
 function Greeting1(props){
+    //props pass data from parent to child
     
     return (
         <Fragment>
