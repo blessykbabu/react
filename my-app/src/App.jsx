@@ -3,7 +3,7 @@ import Greeting1 from "./component/Greeting1"
 import Counter from "./component/Counter"
 import  Counterfunctn from "./component/Counterfuntn"
 import Login from "./component/Login"
-
+import Onchange from "./component/Onchange"
 
 function App() {
   return ( 
@@ -13,6 +13,7 @@ function App() {
     <Counter/>
     <Counterfunctn intialvalue={1}/>
     <Login/>
+    <Onchange/>
    </>
   );
 }
