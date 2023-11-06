@@ -6,23 +6,32 @@ import React, { useState } from 'react';
 function FormComponent({ onSubmit }) {
   // Initialize the state for input data
   
-  const[lname,setlname] = useState("");
-  const[fname,setfname] = useState("");
-  const[email,setemail] = useState("");
-  const[uname,setuname] = useState("");
-  const[password,setpassword] = useState("");
+  const[inputarr,setInputarr]=useState([])
+  const [inputData, setInputData] = useState(
+    {
+        fname:"",
+        lname:"",
+        email:"",
+        uname:"",
+        password:""
+    }
+  );
 
 
   // Handle input change and update the inputData state
-  
-  
-  
+  const handleInputChange = (e) => {
+    setInputData({...inputData,[e.target.name]:e.target.value});
 
+  
+  }
   // Handle form submission and call the onSubmit function
+  let{fname,lname,email,uname,password}=inputData
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(fname,lname,email,uname,password);
     // onSubmit(inputData);
+    setInputarr([...inputarr,{fname,lname,email,uname,password}])
+    console.log(inputarr)
+    console.log(inputData)
 
 };
 
@@ -30,38 +39,39 @@ function FormComponent({ onSubmit }) {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={fname}
+        value={inputData.fname}
         name="fname"
         placeholder="First Name"
-        onChange={(e)=>{setfname(e.target.value)}}
+        onChange={handleInputChange}
       />
       <input 
       type="text"
-      value={lname}
+      value={inputData.lname}
       name="lname"
+
       placeholder="Last Name"
-      onChange={(e)=>{setlname(e.target.value)}}
+      onChange={handleInputChange}
       />
       <input
       type="text"
-      value={email}
+      value={inputData.email}
       name="email"
       placeholder="email"
-      onChange={(e)=>{setemail(e.target.value)}}
+      onChange={handleInputChange}
       />
       <input
       type="text"
-      value={uname}
+      value={inputData.uname}
       name="uname"
       placeholder="username"
-      onChange={(e)=>{setuname(e.target.value)}}
+      onChange={handleInputChange}
       />
       <input 
       type="text"
-      value={password}
+      value={inputData.password}
       name="password"
       placeholder="password"
-      onChange={(e)=>{setpassword(e.target.value)}}
+      onChange={handleInputChange}
       />
       <button type="submit">Submit</button>
     </form>
