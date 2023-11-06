@@ -30,12 +30,14 @@ function FormComponent({ onSubmit }) {
     e.preventDefault();
     // onSubmit(inputData);
     setInputarr([...inputarr,{fname,lname,email,uname,password}])
-    console.log(inputarr)
+    // console.log(inputarr)
     console.log(inputData)
+    setInputData({fname:",",lname:"",email:"",uname:"",password:""})
 
 };
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -75,6 +77,7 @@ function FormComponent({ onSubmit }) {
       />
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 }
 
@@ -93,27 +96,6 @@ function DisplayComponent({ displayData }) {
   </div>
   </>
   );
-}
-
-function Table(){
-    return (
-      <>
-       <table>
-        <thead>
-    <tr>
-        <th>first name</th>
-        <th>last name</th>
-        <th>email</th>
-        <th>user name</th>
-        <th>password</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-  </table>
-      </>
-    )
 }
 
 
