@@ -37,7 +37,7 @@ function FormComponent({ onSubmit }) {
 };
 
   return (
-    <div>
+    
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -77,7 +77,7 @@ function FormComponent({ onSubmit }) {
       />
       <button type="submit">Submit</button>
     </form>
-    </div>
+    
   );
 }
 
@@ -90,8 +90,16 @@ function DisplayComponent({ displayData }) {
   // Display the data received via props
   return (
     <>
-  <div>{displayData}
-  
+  <div>
+  <table>
+    <tr>
+    <td>Fist Name</td>
+    <td>Last Name</td>
+    <td>email</td>
+    <td>user name</td>
+    <td>password</td>
+    </tr>
+  </table>
 
   </div>
   </>
