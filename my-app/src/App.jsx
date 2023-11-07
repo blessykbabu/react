@@ -4,7 +4,7 @@ import Counter from "./component/Counter"
 import  Counterfunctn from "./component/Counterfuntn"
 import Login from "./component/Login"
 import Onchange from "./component/Onchange"
-import ParentComponent from "./component/Form"
+import ParentComponent from "./component/Forms"
 
 function App() {
   return ( 
