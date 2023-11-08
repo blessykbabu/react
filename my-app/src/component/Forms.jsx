@@ -32,7 +32,7 @@ function FormComponent({ onSubmit }) {
     setInputarr([...inputarr,{fname,lname,email,uname,password}])
     // console.log(inputarr)
     console.log(inputData)
-    setInputData({fname:",",lname:"",email:"",uname:"",password:""})
+    setInputData({fname:inputData.fname,lname:inputData.lname,email:inputData.email,uname:inputData.uname,password:inputData.password})
 
 };
 
@@ -45,7 +45,7 @@ function FormComponent({ onSubmit }) {
         name="fname"
         placeholder="First Name"
         onChange={handleInputChange}
-      />
+      /><br></br>
       <input 
       type="text"
       value={inputData.lname}
@@ -53,28 +53,28 @@ function FormComponent({ onSubmit }) {
 
       placeholder="Last Name"
       onChange={handleInputChange}
-      />
+      /><br></br>
       <input
       type="text"
       value={inputData.email}
       name="email"
       placeholder="email"
       onChange={handleInputChange}
-      />
+      /><br></br>
       <input
       type="text"
       value={inputData.uname}
       name="uname"
       placeholder="username"
       onChange={handleInputChange}
-      />
+      /><br></br>
       <input 
       type="text"
       value={inputData.password}
       name="password"
       placeholder="password"
       onChange={handleInputChange}
-      />
+      /><br></br>
       <button type="submit">Submit</button>
     </form>
     
@@ -92,14 +92,19 @@ function DisplayComponent({ displayData }) {
     <>
   <div>
   <table>
+  <thead>
     <tr>
-    <td>Fist Name</td>
-    <td>Last Name</td>
-    <td>email</td>
-    <td>user name</td>
-    <td>password</td>
+    <th>Fist Name</th>
+    <th>Last Name</th>
+    <th>email</th>
+    <th>user name</th>
+    <th>password</th>
     </tr>
-  </table>
+  </thead>
+  <tbody>
+   {displayData.fname}
+  </tbody>
+</table>
 
   </div>
   </>
